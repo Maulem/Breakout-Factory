@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager
+public class GameManager : Singleton<GameManager>
 {
     public enum GameState { MENU, GAME, PAUSE, ENDGAME, RESET };
 
@@ -12,16 +12,16 @@ public class GameManager
     public int resetar = 0;
     public int powerup = 0;
 
-    private static GameManager _instance;
+    // private static GameManager _instance;
 
-    public static GameManager GetInstance() {
-        if(_instance == null)
-        {
-            _instance = new GameManager();
-        }
+    // public static GameManager GetInstance() {
+    //     if(_instance == null)
+    //     {
+    //         _instance = new GameManager();
+    //     }
 
-        return _instance;
-    }
+    //     return _instance;
+    // }
     private GameManager() {
         vidas = 3;
         pontos = 0;
